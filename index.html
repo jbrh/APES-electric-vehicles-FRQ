@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+
+<title>Electric Vehicles FRQ  </title>
+
+<link rel="shortcut icon" href="greenenergy.png">
+
+<!-- the background color is the color surrounding the worksheet-->
+
+
+<style>
+h1 {
+ margin-left: 20px; 
+}
+
+h3 {margin-left: 20px;
+}
+</style>
+
+<style>
+
+body {
+  margin: 0;
+  background: black;
+  min-width: 960px;
+}
+</style>
+
+
+<!-- I downloaded TwentyTen Wordpress theme - that is what the mathjax css is based on - and found the css for the show/hide buttons using the inspect element feature, then copied it here-->
+
+<style>
+
+div#left {
+    width: 80px;
+    float: left;  
+    margin: 30px;  
+    	font-size: 20px;
+ }
+ </style>
+
+</head>
+
+<body class="page page-id-612 page-child parent-pageid-13 page-template-default custom-background">
+     <h1 class="entry-title" style="background-color:#B4009E;color:#ffffff;">Electric Vehicles Compared to Gasoline Vehicles</h1>
+     <h3 style="color:#ffffff;"><i>Use your cursor to drag the center of the spinning system around! Click on the countries at left to access the energy math FRQs.</i></h3>
+
+<div id="left">
+<br/><br/>
+<a target="_blank" href="ElectricVehiclesChina.html">China</a>
+<br/><br/>
+<br/><br/>
+<a target="_blank" href="ElectricVehiclesJapan.html">Japan</a>
+<br/><br/>
+<br/><br/>
+<a target="_blank" href="ElectricVehiclesKenya.html">Kenya</a>
+<br/><br/>
+<br/><br/>
+<a target="_blank" href="ElectricVehiclesRussia.html">Russia</a>
+<br/><br/>
+<br/><br/>
+<a target="_blank" href="ElectricVehiclesUSA.html">USA</a>
+<br/><br/>
+<br/><br/>
+</div>
+
+<script src="http://d3js.org/d3.v3.min.js"></script>
+<script>
+
+var width = Math.max(1100),
+    height = Math.max(500);
+
+var x1 = width / 2,
+    y1 = height / 2,
+    x0 = x1,
+    y0 = y1,
+    i = 0,
+    r = 175,
+    τ = 2 * Math.PI;
+
+var canvas = d3.select("body").append("canvas")
+    .attr("width", width)
+    .attr("height", height)
+    .on("ontouchstart" in document ? "touchmove" : "mousemove", move);
+
+var context = canvas.node().getContext("2d");
+context.globalCompositeOperation = "lighter";
+context.lineWidth = 2;
+
+d3.timer(function() {
+  context.clearRect(0, 0, width, height);
+
+  var z = d3.hsl(++i % 360, 1, .5).rgb(),
+      c = "rgba(" + z.r + "," + z.g + "," + z.b + ",",
+      x = x0 += (x1 - x0) * .1,
+      y = y0 += (y1 - y0) * .1;
+
+  d3.select({}).transition()
+      .duration(2000)
+      .ease(Math.sqrt)
+      .tween("circle", function() {
+        return function(t) {
+          context.strokeStyle = c + (1 - t) + ")";
+          context.beginPath();
+          context.arc(x, y, r * t, 0, τ);
+          context.stroke();
+        };
+      });
+});
+
+function move() {
+  var mouse = d3.mouse(this);
+  x1 = mouse[0];
+  y1 = mouse[1];
+  d3.event.preventDefault();
+}
+
+</script>
+
+</body>
+<p style="font-size:small; color:gray; text-align:center;">
+<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/deed.en_US"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-nc-sa/3.0/80x15.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">APES Practice for Energy Math</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="http://www.physics.drexel.edu/~tim" property="cc:attributionName" rel="cc:attributionURL">Jenny Hoffman</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/deed.en_US">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>.
+<br/>
+This software incorporates the MathJax TEX and CSS libraries, the JQuery
+Google API, and D3.js.
+<br>"OMG Particles" interactive is adapted from http://bl.ocks.org/mbostock/9539958 (Copyright (c) 2010-2014, Michael Bostock. All rights reserved).
+</html>

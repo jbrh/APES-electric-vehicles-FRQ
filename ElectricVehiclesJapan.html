@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+
+<title>Electric Vehicles FRQ </title>
+
+<!-- the link below is the little mathjax icon in the webpage tab-->
+
+<link rel="shortcut icon" href="greenenergy.png">
+<link rel="stylesheet" type="text/css" media="all" href="http://www.mathjax.org/wp-content/themes/mathjax/style.css" />
+
+<script type='text/javascript' src='http://www.mathjax.org/wp-content/plugins/syntax-highlighter-mt/scripts/shCore.js'></script>
+<script type='text/javascript' src='http://www.mathjax.org/wp-content/plugins/syntax-highlighter-mt/scripts/shAutoloader.js'></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js"></script>
+
+<link type='text/css' rel='stylesheet' href='http://www.mathjax.org/wp-content/plugins/syntax-highlighter-mt/styles/shCore.css'/>
+<link type='text/css' rel='stylesheet' href='http://www.mathjax.org/wp-content/plugins/syntax-highlighter-mt/styles/shThemeDefault.css'/>
+
+<!-- the background color is the color surrounding the worksheet-->
+
+<style type="text/css" id="custom-background-css">
+body.custom-background { background-image:url('abstractbackground.jpg');
+ }
+
+</style>
+
+<style>
+#content {
+margin: 0 auto;
+}
+</style>
+
+<style>
+#site-title {
+    margin: 0;
+    width: 600px;
+}
+</style>
+
+
+<style type="text/css" id="math-header-css">
+.math-header, .section-header {
+    background: #afeb10;
+    border-top: 1px solid #ccc;
+    color: ##FFBF00;
+    font-family: "Helvetica Neue", Arial, Helvetica, "Nimbus Sans L", sans-serif;
+    font-weight: bold;
+    margin-bottom: 20px;
+    padding: 10px;
+    text-shadow: 0 0 0
+}
+
+</style>
+
+<!-- I downloaded TwentyTen Wordpress theme - that is what the mathjax css is based on - and found the css for the show/hide buttons using the inspect element feature, then copied it here-->
+<style type="text/css" id="input">
+#content input,
+#content textarea {
+  color: #F2072E;
+  font-weight: bold;
+}
+
+</style>
+
+
+<script>
+$(document).ready(function() {
+  $('showhide').hide();
+});
+</script>
+
+<script type="text/javascript">
+
+/**
+ * Returns a random number between min and max
+ */
+function getRandomArb (min, max) {
+    return Math.random() * (max - min) + min;
+}
+
+/**
+ * Returns a random integer between min and max
+ * Using Math.round() will give you a non-uniform distribution!
+ */
+function getRandomInt (min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+/** Jenny found this, but not sure if it is needed - should try to remove it and see if answers still round*/
+
+function answertoproblem (number) {
+    return Math.round();
+}
+/**
+ * Jenny found this to add commas to integers
+ */
+
+function digits (number) { 
+    return number.toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,"); 
+}
+
+</script>
+
+<script type="text/x-mathjax-config">
+
+  MathJax.Hub.Config({
+
+    tex2jax: { inlineMath: [['$','$'],['\\(','\\)']] }
+
+  });
+
+</script>
+
+<script type='text/javascript' src='http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+
+</head>
+
+
+
+<body class="page page-id-612 page-child parent-pageid-13 page-template-default custom-background">
+
+<div id="wrapper" class="hfeed">
+  <div id="header">
+    <div id="masthead">
+
+	<div id="branding" role="banner">
+           <div id="site-title">
+        	<span>AIS APES 2014 - Practice for Energy Math</span>
+ 	   </div>
+	  <div id="site-description"></div><!--I moved the Practice for Energy Math to the site title above think it looks cleaner-->
+        </div>
+       </div><!-- #branding -->
+     </div> 
+   
+    <div class="clear"></div>
+<br/><br/>
+<div id="main">
+ <div id="container">
+  <div id="content" role="main">
+    <div id="post-612" class="post-612 page type-page status-publish hentry">
+
+<div class="showhide" id="showhide">
+     <h1 class="entry-title">Electric Vehicles Compared to Gasoline Vehicles</h1>
+<br/>
+<script>
+  
+       var countryis = "Japan";
+       var carsincountry = 75000000;/** http://en.wikipedia.org/wiki/List_of_countries_by_vehicles_per_capita*/
+       var milespergallon = 45;/** http://www.marketingcharts.com/topics/asia-pacific/us-last-among-major-countries-in-car-fuel-economy-standards-1141/icct-fuel-economy-mpg-standardsgif*/
+       var avgmilescardriven = 5000;
+       var decimalelectric = .50;
+       var percentelectric = 50;
+       var answertoproblem = Math.round(carsincountry*avgmilescardriven/milespergallon*percentelectric);
+   
+  </script>
+
+  
+  <p>Electric vehicles often have been proposed as an environmentally sound alternative to the gasoline engine for transportation.  Several car manufacturers now include electric vehicles among their available models.  In spite of these initiatives, the penetration of electric vehicles into the transportation sector of <b><script>document.write(countryis)</script></b> remains modest.</p>  
+  <br/>
+
+  
+
+<div class="math-header">Estimate the potential reduction in petroleum consumption (in gallons of gasoline per year) that could be achieved in <b><script>document.write(countryis)</script></b> by introducing electric vehicles under the following assumptions.  Be sure to show all your work and include units with your answers.</div>
+
+<ol>
+  <li> The average car gets <b><script>document.write(milespergallon)</script></b> mpg.</li>
+  <li> The average car is driven <b><script>document.write(avgmilescardriven.toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,"))</script></b> miles per year.</li>
+  <li> <b><script>document.write(countryis)</script></b> has <b><script>document.write(carsincountry.toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,"))</script></b> cars</li>
+  <li> <b><script>document.write(percentelectric)</script></b> percent of <b><script>document.write(countryis)</script>'s</b> cars could be replaced with electric vehicles.</li>
+</ol>
+
+<input type="submit" name="hideh2" value="Hide Solution" id="hideh2" /> <input type="submit" name="showh2" value="Show Solutions" id="showh2" />
+
+<br/><br/>
+<div class="showhide2" id="showhide2">
+
+ <script>
+  document.write("\\[ \\left("+carsincountry.toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,")+"\\ total \\ cars\\right) \\times \\left("+avgmilescardriven.toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,")+"\\frac{\ miles}{\ year}\\right)\\div \\left("+milespergallon+" \\frac{\ miles}{\ gallon}\\right) \\times \\left("+decimalelectric+"\\right) = "+answertoproblem.toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,")+"\\frac{\\ gallons \\ saved}{\\ yr}\\]");
+  </script>
+
+</div>
+<script>
+
+$('#showhide2').hide(2600, function() {});
+
+
+$('#showh2').click(function() {
+  $('#showhide2').show('slow', function() {});
+});
+
+$('#hideh2').click(function() {
+  $('#showhide2').hide('slow', function() {});
+});
+</script>
+
+
+<br/><br/>
+  
+</body>
+<p style="font-size:xx-small; color:gray; text-align:center;">
+<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/deed.en_US"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-nc-sa/3.0/80x15.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">APES Practice for Energy Math</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="http://www.physics.drexel.edu/~tim" property="cc:attributionName" rel="cc:attributionURL">Jenny Hoffman</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/deed.en_US">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>.
+<br/>
+This software incorporates the MathJax TEX and CSS libraries and JQuery
+Google API.</p>
+</html>
