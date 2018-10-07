@@ -7,22 +7,20 @@
 
 <title>Electric Vehicles FRQ </title>
 
-<!-- the link below is the little mathjax icon in the webpage tab-->
-
+<link rel="profile" href="http://gmpg.org/xfn/11" />
 <link rel="shortcut icon" href="greenenergy.png">
-<link rel="stylesheet" type="text/css" media="all" href="http://www.mathjax.org/wp-content/themes/mathjax/style.css" />
+<link rel="stylesheet" type="text/css" href="styles.css">
 
-<script type='text/javascript' src='http://www.mathjax.org/wp-content/plugins/syntax-highlighter-mt/scripts/shCore.js'></script>
-<script type='text/javascript' src='http://www.mathjax.org/wp-content/plugins/syntax-highlighter-mt/scripts/shAutoloader.js'></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js"></script>
+<script
+  src="https://code.jquery.com/jquery-2.2.4.js"
+  integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="
+  crossorigin="anonymous">
+</script>
 
-<link type='text/css' rel='stylesheet' href='http://www.mathjax.org/wp-content/plugins/syntax-highlighter-mt/styles/shCore.css'/>
-<link type='text/css' rel='stylesheet' href='http://www.mathjax.org/wp-content/plugins/syntax-highlighter-mt/styles/shThemeDefault.css'/>
 
-<!-- the background color is the color surrounding the worksheet-->
+<style>
 
-<style type="text/css" id="custom-background-css">
-body.custom-background { 
+body { 
     background-color: #6DB3F2;
     background-image:url('abstractbackground.jpg');
     background-repeat:no-repeat;
@@ -32,10 +30,7 @@ body.custom-background {
 #content {
     margin: 0 auto;
 }
-</style>
 
-
-<style type="text/css" id="math-header-css">
 .math-header, .section-header {
     display: inline-block;
     background: #afeb10;
@@ -48,10 +43,6 @@ body.custom-background {
     text-shadow: 0 0 0
 }
 
-</style>
-
-<!-- I downloaded TwentyTen Wordpress theme - that is what the mathjax css is based on - and found the css for the show/hide buttons using the inspect element feature, then copied it here-->
-<style type="text/css" id="input">
 #content input,
 #content textarea {
   color: #F2072E;
@@ -118,14 +109,11 @@ input {
 
 </style>
 
-
 <script>
-$(document).ready(function() {
-  $('showhide').hide();
-});
-</script>
 
-<script type="text/javascript">
+$(document).ready(function() {
+  $('.showhideall').hide();
+});
 
 /**
  * Returns a random number between min and max
@@ -155,6 +143,14 @@ function digits (number) {
     return number.toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,"); 
 }
 
+var countryis = "the US";
+var carsincountry = 250000000;
+var milespergallon = 25;
+var avgmilescardriven = 15000;
+var decimalelectric = .25;
+var percentelectric = 25;
+var answertoproblem = Math.round(carsincountry*avgmilescardriven/milespergallon*percentelectric);
+
 </script>
 
 <script type="text/x-mathjax-config">
@@ -173,33 +169,11 @@ function digits (number) {
 
 
 
-<body class="page page-id-612 page-child parent-pageid-13 page-template-default custom-background">
-
-<br>
-
-<div id="main">
- <div id="container">
-  <div id="content" role="main">
-    <div id="post-612" class="post-612 page type-page status-publish hentry">
-
-<div class="showhide" id="showhide">
-     <h1 class="writing">Electric Vehicles Compared to Gasoline Vehicles</h1>
+<body>
+  <div id="content">
+  <h1 class="writing">Electric Vehicles Compared to Gasoline Vehicles</h1>
 <br/>
-<script>
-/** http://en.wikipedia.org/wiki/List_of_countries_by_vehicles_per_capita*/
-/** http://www.marketingcharts.com/topics/asia-pacific/us-last-among-major-countries-in-car-fuel-economy-standards-1141/icct-fuel-economy-mpg-standardsgif*/
-
-var countryis = "the US";
-var carsincountry = 250000000;
-var milespergallon = 25;
-var avgmilescardriven = 15000;
-var decimalelectric = .25;
-var percentelectric = 25;
-var answertoproblem = Math.round(carsincountry*avgmilescardriven/milespergallon*percentelectric);
  
-</script>
-
-  
   <p class="writing">Electric vehicles often have been proposed as an environmentally sound alternative to the gasoline engine for transportation.  Several car manufacturers now include electric vehicles among their available models.  In spite of these initiatives, the penetration of electric vehicles into the transportation sector of <b><script>document.write(countryis)</script></b> remains modest.</p>  
   <br/>
 
@@ -215,11 +189,11 @@ var answertoproblem = Math.round(carsincountry*avgmilescardriven/milespergallon*
   <br>
 </ul>
 
-<input type="submit" name="hideh2" value="Hide Solution" id="hideh2" /> <input type="submit" name="showh2" value="Show Solutions" id="showh2" />
+<input type="button" class="show_hide1" value="Show answer" />
 <br>
 
 <br/><br/>
-<div class="showhideall" id="showhide2">
+<div class="showhideall" id="showhide1">
 
  <script>
   document.write("\\[ \\left("+carsincountry.toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,")+"\\ total \\ cars\\right) \\times \\left("+avgmilescardriven.toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,")+"\\frac{\ miles}{\ year}\\right)\\div \\left("+milespergallon+" \\frac{\ miles}{\ gallon}\\right) \\times \\left("+decimalelectric+"\\right) = "+answertoproblem.toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,")+"\\frac{\\ gallons \\ saved}{\\ yr}\\]");
@@ -228,15 +202,9 @@ var answertoproblem = Math.round(carsincountry*avgmilescardriven/milespergallon*
 </div>
 <script>
 
-$('#showhide2').hide(2600, function() {});
-
-
-$('#showh2').click(function() {
-  $('#showhide2').show('slow', function() {});
-});
-
-$('#hideh2').click(function() {
-  $('#showhide2').hide('slow', function() {});
+$('.show_hide1').click(function(){
+    $("#showhide1").toggle( "slow");
+    $(this).val( $(this).val() == 'Show answer' ? 'Hide answer' : 'Show answer' );
 });
 </script>
 
